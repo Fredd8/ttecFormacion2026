@@ -12,16 +12,26 @@ import { sha256Hex } from '../app/utils/crypto';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, InputTextModule, PasswordModule, ButtonModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonModule,
+  ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   form: any;
   loading = false;
   errorMessage: string | null = null;
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private auth: AuthService,
+    private router: Router
+  ) {
     this.form = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -39,7 +49,8 @@ export class LoginComponent {
     sha256Hex(data.password)
       .then((hash) => {
         const dto = { username: data.username, passwordHash: hash };
-        this.auth.login(dto)
+        this.auth
+          .login(dto)
           .pipe(finalize(() => (this.loading = false)))
           .subscribe({
             next: (res) => {
@@ -58,7 +69,8 @@ export class LoginComponent {
                 this.errorMessage = 'Usuario o contraseña incorrectos.';
                 return;
               }
-              this.errorMessage = err?.error || err?.message || 'Error en login';
+              this.errorMessage =
+                err?.error || err?.message || 'Error en login';
             },
           });
       })
@@ -68,5 +80,4 @@ export class LoginComponent {
         console.error(err);
       });
   }
-
 }

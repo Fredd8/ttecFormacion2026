@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TTEC_API_Formacion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e0d3887d4019745470dd65f94c55ccb2fc0f43a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8409df39d80508f586c0529f68de22feb2f6a6f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TTEC_API_Formacion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TTEC_API_Formacion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

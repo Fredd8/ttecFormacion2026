@@ -15,10 +15,9 @@ Accept: application/json
 # Crear usuario
 POST {{baseUrl}}/users
 Content-Type: application/json
-
 {
-  "username": "usuario1",
-  "passwordHash": "hash_sha256_del_front",
+  "username": "aa",
+  "passwordHash": "aa",
   "email": "usuario1@example.com",
   "role": "User"
 }
